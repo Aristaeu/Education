@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MasterClass Pro | Transform Your Skills with Expert-Led Courses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        :root {
+            --primary: #7c3aed;
+            --primary-dark: #5b21b6;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--dark);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding-top: 150px;
+            padding-bottom: 100px;
+            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+        
+        .hero-text h1 span {
+            color: var(--primary);
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: var(--transition);
+        }
+        
+        .hero-image img:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(124, 58, 237, 0.05);
+            transform: translateY(-3px);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background-color: #d97706;
+            transform: translateY(-3px);
+        }
+        
+        /* Stats Bar */
+        .stats-bar {
+            background-color: white;
+            padding: 40px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            padding: 0 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .stat-text {
+            color: var(--gray);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Value Proposition */
+        .value-proposition {
+            background-color: white;
+        }
+        
+        .usp-container {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 15px;
+            padding: 60px;
+            color: white;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .usp-container::before {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            top: -100px;
+            right: -100px;
+        }
+        
+        .usp-container::after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            bottom: -75px;
+            left: -75px;
+        }
+        
+        .usp-container h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .usp-container p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .usp-tag {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Featured Courses */
+        .featured-courses {
+            background-color: #f9fafb;
+        }
+        
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .course-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .course-img {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .course-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .course-card:hover .course-img img {
+            transform: scale(1.05);
+        }
+        
+        .course-content {
+            padding: 25px;
+        }
+        
+        .course-category {
+            display: inline-block;
+            background-color: rgba(124, 58, 237, 0.1);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .course-title {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        .course-instructor {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .instructor-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+        
+        .instructor-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .instructor-name {
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .course-stats {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .course-stats span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .course-stats i {
+            margin-right: 5px;
+        }
+        
+        .course-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 1rem;
+            margin-left: 5px;
+        }
+        
+        /* Learning Experience */
+        .learning-experience {
+            background-color: white;
+        }
+        
+        .experience-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .experience-image {
+            flex: 1;
+        }
+        
+        .experience-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        
+        .experience-content {
+            flex: 1;
+        }
+        
+        .experience-content h3 {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+        
+        .experience-content p {
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+        
+        .experience-features {
+            list-style: none;
+        }
+        
+        .experience-features li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .experience-features i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: #f9fafb;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: "\201C";
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 4rem;
+            color: rgba(124, 58, 237, 0.1);
+            font-family: serif;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            color: var(--dark);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h5 {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .rating {
+            color: var(--accent);
+            margin-top: 5px;
+        }
+        
+        /* Enrollment CTA */
+        .enrollment-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .enrollment-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .enrollment-container .section-title h2 {
+            color: white;
+        }
+        
+        .enrollment-container .section-title p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .enrollment-features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .enrollment-feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 200px;
+        }
+        
+        .enrollment-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .enrollment-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .enrollment-feature h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Enrollment Form */
+        .enrollment-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-top: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .form-footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--gray);
+            text-align: center;
+        }
+        
+        .form-footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .badge-icon {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .badge-text {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background-color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .faq-question i {
+            transition: var(--transition);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+            background-color: #f9f9f9;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero-text {
+                text-align: center;
+                margin-bottom: 50px;
+            }
+            
+            .experience-container {
+                flex-direction: column;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .usp-container {
+                padding: 40px 20px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .usp-container h3 {
+                font-size: 1.8rem;
+            }
+            
+            .course-card, .testimonial-card, .enrollment-form {
+                padding: 20px;
+            }
+            
+            .enrollment-features {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-graduation-cap"></i>MasterClass<span>Pro</span>
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#experience">Learning</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transform Your Career with <span>Expert-Led Courses</span></h1>
+                    <p>Join over 500,000 students who have advanced their skills, changed careers, and achieved their goals with our world-class learning platform.</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="#enrollment" class="btn btn-primary">Start Learning Free for 7 Days</a>
+                        <a href="#courses" class="btn btn-secondary">Explore Courses</a>
+                    </div>
+                    
+                    <div style="margin-top: 30px; display: flex; align-items: center; gap: 15px; justify-content: center;">
+                        <div style="display: flex;">
+                            <i class="fas fa-star" style="color: var(--accent);"></i>
+                            <i class="fas fa-star" style="color: var(--accent);"></i>
+                            <i class="fas fa-star" style="color: var(--accent);"></i>
+                            <i class="fas fa-star" style="color: var(--accent);"></i>
+                            <i class="fas fa-star" style="color: var(--accent);"></i>
+                        </div>
+                        <span>4.8/5 average rating from 50,000+ reviews</span>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="Gemini_Generated_Image_t0j9k7t0j9k7t0j9.png" alt="Online Learning Experience">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">500K+</div>
+                    <div class="stat-text">Students Enrolled</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2,500+</div>
+                    <div class="stat-text">Expert Instructors</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-text">Course Hours</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">94%</div>
+                    <div class="stat-text">Completion Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="value-proposition">
+        <div class="container">
+            <div class="usp-container">
+                <h3>Learn from Industry Leaders, Not Just Teachers</h3>
+                <p>Our courses are created and taught by professionals actively working in their fields, giving you practical, up-to-date skills you can apply immediately.</p>
+                <div class="usp-tag">Learn Anytime, Anywhere | 7-Day Free Trial | Certificate of Completion</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="featured-courses" id="courses">
+        <div class="container">
+            <div class="section-title">
+                <h2>Most Popular Courses</h2>
+                <p>Browse our top-rated courses across various disciplines</p>
+            </div>
+            
+            <div class="courses-grid">
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Full Stack Web Development">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Technology</span>
+                        <h3 class="course-title">Full Stack Web Development Bootcamp</h3>
+                        
+                        <div class="course-instructor">
+                            <div class="instructor-img">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Instructor">
+                            </div>
+                            <div class="instructor-name">Alex Johnson</div>
+                        </div>
+                        
+                        <div class="course-stats">
+                            <span><i class="far fa-clock"></i> 65 hours</span>
+                            <span><i class="far fa-user"></i> 42,500 students</span>
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                        
+                        <p style="color: var(--gray); margin-bottom: 20px; font-size: 0.95rem;">Learn HTML, CSS, JavaScript, React, Node.js, and MongoDB to build complete web applications.</p>
+                        
+                        <div class="course-price">
+                            <div>
+                                <span class="price">₹3,499</span>
+                                <span class="old-price">₹12,999</span>
+                            </div>
+                            <a href="#enrollment" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Data Science">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Data Science</span>
+                        <h3 class="course-title">Data Science & Machine Learning A-Z</h3>
+                        
+                        <div class="course-instructor">
+                            <div class="instructor-img">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Instructor">
+                            </div>
+                            <div class="instructor-name">Sarah Chen</div>
+                        </div>
+                        
+                        <div class="course-stats">
+                            <span><i class="far fa-clock"></i> 72 hours</span>
+                            <span><i class="far fa-user"></i> 35,200 students</span>
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                        
+                        <p style="color: var(--gray); margin-bottom: 20px; font-size: 0.95rem;">Master Python, Pandas, NumPy, Scikit-learn, TensorFlow, and data visualization techniques.</p>
+                        
+                        <div class="course-price">
+                            <div>
+                                <span class="price">₹4,199</span>
+                                <span class="old-price">₹15,999</span>
+                            </div>
+                            <a href="#enrollment" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Digital Marketing">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Marketing</span>
+                        <h3 class="course-title">Digital Marketing Mastery</h3>
+                        
+                        <div class="course-instructor">
+                            <div class="instructor-img">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Instructor">
+                            </div>
+                            <div class="instructor-name">Michael Rodriguez</div>
+                        </div>
+                        
+                        <div class="course-stats">
+                            <span><i class="far fa-clock"></i> 48 hours</span>
+                            <span><i class="far fa-user"></i> 58,300 students</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        
+                        <p style="color: var(--gray); margin-bottom: 20px; font-size: 0.95rem;">Learn SEO, social media marketing, Google Ads, email marketing, and content strategy.</p>
+                        
+                        <div class="course-price">
+                            <div>
+                                <span class="price">₹2,999</span>
+                                <span class="old-price">₹9,999</span>
+                            </div>
+                            <a href="#enrollment" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#enrollment" class="btn btn-secondary">View All 250+ Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Experience -->
+    <section class="learning-experience" id="experience">
+        <div class="container">
+            <div class="experience-container">
+                <div class="experience-image">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Interactive Learning Platform">
+                </div>
+                
+                <div class="experience-content">
+                    <h3>Experience Learning Like Never Before</h3>
+                    <p>Our platform combines cutting-edge technology with proven pedagogical methods to create an engaging, effective learning experience.</p>
+                    
+                    <ul class="experience-features">
+                        <li>
+                            <i class="fas fa-play-circle"></i>
+                            <div>
+                                <h4>Interactive Video Lessons</h4>
+                                <p>Engaging videos with quizzes, assignments, and hands-on exercises to reinforce learning.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-laptop-code"></i>
+                            <div>
+                                <h4>Live Coding Environments</h4>
+                                <p>Practice coding directly in your browser with instant feedback and debugging tools.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-comments"></i>
+                            <div>
+                                <h4>Community & Peer Support</h4>
+                                <p>Connect with fellow learners, ask questions, and collaborate on projects.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <h4>Industry-Recognized Certificates</h4>
+                                <p>Earn certificates you can add to your resume and LinkedIn profile.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Students Say</h2>
+                <p>Join thousands of successful graduates who transformed their careers</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "I went from a non-technical background to landing a job as a front-end developer in 6 months. The structured curriculum and project-based learning made all the difference."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Student">
+                        </div>
+                        <div class="author-info">
+                            <h5>Priya Sharma</h5>
+                            <p>Front-End Developer at TechCorp</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The data science course was comprehensive and up-to-date with industry trends. The projects were challenging but realistic, which helped me during job interviews."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Student">
+                        </div>
+                        <div class="author-info">
+                            <h5>Raj Patel</h5>
+                            <p>Data Analyst at Data Insights Inc.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "As a working professional, I needed flexibility. The self-paced courses allowed me to learn around my schedule. The certificate helped me get a promotion at work."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Student">
+                        </div>
+                        <div class="author-info">
+                            <h5>Anita Desai</h5>
+                            <p>Marketing Manager, E-commerce</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enrollment CTA -->
+    <section class="enrollment-cta" id="enrollment">
+        <div class="container">
+            <div class="enrollment-container">
+                <div class="section-title">
+                    <h2>Start Your Learning Journey Today</h2>
+                    <p>Get 7 days free access to all courses. Cancel anytime during trial period.</p>
+                </div>
+                
+                <div class="enrollment-features">
+                    <div class="enrollment-feature">
+                        <div class="enrollment-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <h4>10,000+ Lessons</h4>
+                        <p style="text-align: center; font-size: 0.95rem; opacity: 0.9;">Access all courses and learning materials</p>
+                    </div>
+                    
+                    <div class="enrollment-feature">
+                        <div class="enrollment-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h4>Certificates</h4>
+                        <p style="text-align: center; font-size: 0.95rem; opacity: 0.9;">Earn recognized completion certificates</p>
+                    </div>
+                    
+                    <div class="enrollment-feature">
+                        <div class="enrollment-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Community</h4>
+                        <p style="text-align: center; font-size: 0.95rem; opacity: 0.9;">Join our active learner community</p>
+                    </div>
+                </div>
+                
+                <div class="enrollment-form">
+                    <form id="enroll-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="full-name">Full Name</label>
+                                <input type="text" id="full-name" class="form-control" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="interest">Primary Interest</label>
+                                <select id="interest" class="form-control" required>
+                                    <option value="" disabled selected>Select your area of interest</option>
+                                    <option value="tech">Technology & Programming</option>
+                                    <option value="business">Business & Marketing</option>
+                                    <option value="design">Design & Creative Arts</option>
+                                    <option value="data">Data Science & Analytics</option>
+                                    <option value="personal">Personal Development</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 18px; font-size: 1.1rem;">
+                            <i class="fas fa-rocket"></i> Start 7-Day Free Trial
+                        </button>
+                        
+                        <div class="form-footer">
+                            <p>By signing up, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. After 7 days, subscription continues at ₹999/month unless canceled.</p>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="trust-badges" style="margin-top: 40px;">
+                    <div class="badge">
+                        <div class="badge-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="badge-text">
+                            <div>Secure Payment</div>
+                        </div>
+                    </div>
+                    
+                    <div class="badge">
+                        <div class="badge-icon">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <div class="badge-text">
+                            <div>30-Day Money Back</div>
+                        </div>
+                    </div>
+                    
+                    <div class="badge">
+                        <div class="badge-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="badge-text">
+                            <div>24/7 Support</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our platform</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How does the 7-day free trial work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>When you sign up, you get full access to all courses and features for 7 days absolutely free. If you don't cancel within those 7 days, your subscription will automatically continue at ₹999/month. You can cancel anytime before the trial ends with no charges.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do I get a certificate after completing a course?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Upon successful completion of any course (including all assignments and passing the final assessment), you'll receive a verified certificate of completion that you can share on your LinkedIn profile, resume, or social media.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are the courses self-paced or scheduled?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>All courses are completely self-paced. You can learn at your own schedule, pause and resume whenever you want. Some courses also offer optional live sessions with instructors for Q&A, but these are always recorded for later viewing.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I need help during my learning?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer multiple support channels: 1) Course discussion forums where you can ask questions and get answers from instructors and fellow students, 2) 24/7 email support for technical issues, and 3) Weekly live Q&A sessions with course instructors.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I download course materials for offline viewing?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, most course materials including videos, PDFs, and resources are available for download via our mobile app. This allows you to continue learning even when you're offline or on the go.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#enrollment" class="btn btn-accent">Ready to Start Learning? Enroll Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>MasterClass Pro</h4>
+                    <p>Empowering learners worldwide with expert-led courses since 2015. Join 500,000+ students on their educational journey.</p>
+                    <div style="margin-top: 20px; display: flex; gap: 15px;">
+                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Popular Courses</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                        <li><a href="#">Business Analytics</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Instructor Program</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope" style="margin-right: 10px;"></i> support@masterclasspro.com</li>
+                        <li><i class="fas fa-phone" style="margin-right: 10px;"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Bengaluru, India</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 MasterClass Pro. All rights reserved. | <a href="#" style="color: rgba(255, 255, 255, 0.7);">Terms of Service</a> | <a href="#" style="color: rgba(255, 255, 255, 0.7);">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+        
+        // Form submission
+        document.getElementById('enroll-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('full-name').value;
+            const email = document.getElementById('email').value;
+            
+            // Show success message
+            alert(`Thank you ${name}! Your 7-day free trial has been activated. Login details have been sent to ${email}.`);
+            
+            // In a real implementation, you would send this data to your server
+            console.log('Enrollment captured:', { name, email });
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if(window.innerWidth <= 768) {
+                        document.querySelector('.nav-links').style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
